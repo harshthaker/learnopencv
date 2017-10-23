@@ -163,7 +163,7 @@ def warpTriangle(img1, img2, t1, t2) :
     t2Rect = []
     t2RectInt = []
 
-    for i in xrange(0, 3):
+    for i in range(0, 3):
         t1Rect.append(((t1[i][0] - r1[0]),(t1[i][1] - r1[1])))
         t2Rect.append(((t2[i][0] - r2[0]),(t2[i][1] - r2[1])))
         t2RectInt.append(((t2[i][0] - r2[0]),(t2[i][1] - r2[1])))
@@ -222,7 +222,7 @@ if __name__ == '__main__' :
     # Warp images and trasnform landmarks to output coordinate system,
     # and find average of transformed landmarks.
     
-    for i in xrange(0, numImages):
+    for i in range(0, numImages):
 
         points1 = allPoints[i];
 
@@ -261,14 +261,14 @@ if __name__ == '__main__' :
     output = np.zeros((h,w,3), np.float32());
 
     # Warp input images to average image landmarks
-    for i in xrange(0, len(imagesNorm)) :
+    for i in range(0, len(imagesNorm)) :
         img = np.zeros((h,w,3), np.float32());
         # Transform triangles one by one
-        for j in xrange(0, len(dt)) :
+        for j in range(0, len(dt)) :
             tin = []; 
             tout = [];
             
-            for k in xrange(0, 3) :                
+            for k in range(0, 3) :                
                 pIn = pointsNorm[i][dt[j][k]];
                 pIn = constrainPoint(pIn, w, h);
                 
