@@ -122,8 +122,8 @@ def calculateDelaunayTriangles(rect, points):
         
         if rectContains(rect, pt1) and rectContains(rect, pt2) and rectContains(rect, pt3):
             ind = []
-            for j in xrange(0, 3):
-                for k in xrange(0, len(points)):                    
+            for j in range(0, 3):
+                for k in range(0, len(points)):                    
                     if(abs(pt[j][0] - points[k][0]) < 1.0 and abs(pt[j][1] - points[k][1]) < 1.0):
                         ind.append(k)                            
             if len(ind) == 3:                                                
